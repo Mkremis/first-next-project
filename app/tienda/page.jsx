@@ -1,5 +1,12 @@
+import ServerComponent from "@/components/ServerComponent";
+
 const Tienda = () => {
-  return <div>Tienda</div>;
+  return (
+    <>
+      <p>Bienvenido a la tienda</p>
+      <ServerComponent />
+    </>
+  );
 };
 
 export default Tienda;
