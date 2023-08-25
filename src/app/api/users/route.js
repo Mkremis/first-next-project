@@ -10,9 +10,8 @@ export async function GET() {
 
 export async function POST(request) {
   const body = await request.json();
-  const dataBase = [];
-  dataBase.push(body, db);
-  fs.writeFileSync("./users/users.json", JSON.stringify(dataBase));
+  const dataBase = { ...db, ...body };
+  fs.writeFileSync("src/app/api/users/users.json", JSON.stringify(dataBase));
   return NextResponse.json({ message: "Creando datos." });
 }
 

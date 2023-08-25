@@ -6,7 +6,7 @@ export default async function createUser() {
     const formData = new FormData(e.target);
     const userData = Object.fromEntries(formData.entries());
     console.log(userData);
-    const res = await fetch(`https://9rdz68-3000.csb.app/api/users`, {
+    const res = await fetch(`https://9rdz68-3001.csb.app/api/users`, {
       method: "POST",
       body: JSON.stringify(userData),
       headers: {
