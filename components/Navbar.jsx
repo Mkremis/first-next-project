@@ -2,15 +2,8 @@ import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <nav style={{ flexBasis: "40%" }}>
-      <ul
-        style={{
-          display: "flex",
-          listStyle: "none",
-          alignItems: "center",
-          justifyContent: "space-evenly",
-        }}
-      >
+    <nav className="navbar py-5">
+      <ul>
         <li>
           <Link href={"/about"}>About</Link>
         </li>

@@ -9,27 +9,11 @@ export const metadata = {
 export default function ComputadorasLayout({ children }) {
   return (
     <>
-      <nav
-        style={{
-          backgroundColor: "green",
-          color: "#fff",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-        }}
-      >
+      <nav clasName="nav-bar">
         <h3>
           <Link href={"/tienda/categorias/computadoras"}>Computadoras</Link>
         </h3>
-        <ul
-          style={{
-            flexBasis: "40%",
-            display: "flex",
-            listStyle: "none",
-            alignItems: "center",
-            justifyContent: "space-evenly",
-          }}
-        >
+        <ul>
           <li>
             <Link href={"/tienda/categorias/computadoras/laptop"}>Laptop</Link>
           </li>

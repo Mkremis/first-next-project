@@ -8,27 +8,11 @@ export const metadata = {
 export default function TiendaLayout({ children }) {
   return (
     <>
-      <nav
-        style={{
-          backgroundColor: "pink",
-          color: "#fff",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-        }}
-      >
+      <nav className="nav-bar">
         <h3>
           <Link href={"/tienda"}>Tienda</Link>
         </h3>
-        <ul
-          style={{
-            flexBasis: "40%",
-            display: "flex",
-            listStyle: "none",
-            alignItems: "center",
-            justifyContent: "space-evenly",
-          }}
-        >
+        <ul>
           <li>
             <Link href={"/tienda/categorias"}>Categorias</Link>
           </li>
