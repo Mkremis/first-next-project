@@ -3,13 +3,10 @@
 export default async function createUser() {
   const handleSubmit = async (e) => {
     e.preventDefault();
-    let userData = {};
-
-    Array.from(new FormData(e.target)).map(
-      (field) => (userData = { ...userData, [field[0]]: field[1] })
-    );
+    const formData = new FormData(e.target);
+    const userData = Object.fromEntries(formData.entries());
     console.log(userData);
-    const res = await fetch(`https://9rdz68-3000.csb.app/api/users`, {
+    const res = await fetch(`https://9rdz68-3001.csb.app/api/users`, {
       method: "POST",
       body: JSON.stringify(userData),
       headers: {
