@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import fs from "fs";
 import db from "/users.json";
 
+const dataBase = [];
+
 export async function GET() {
   const res = await fetch("https://jsonplaceholder.typicode.com/users");
   const data = await res.json();
@@ -10,7 +12,8 @@ export async function GET() {
 
 export async function POST(request) {
   const body = await request.json();
-  const dataBase = { ...db, ...body };
+  if (db.length) db.map((d) => dataBase.push(d));
+  dataBase.push(body);
   fs.writeFileSync("src/app/api/users/users.json", JSON.stringify(dataBase));
   return NextResponse.json({ message: "Creando datos." });
 }
