@@ -6,7 +6,7 @@ export default async function createUser() {
     const formData = new FormData(e.target);
     const userData = Object.fromEntries(formData.entries());
 
-    const res = await fetch(`http://localhost:3000/api/users`, {
+    const res = await fetch(`/api/users`, {
       method: "POST",
       body: JSON.stringify(userData),
       headers: {

@@ -4,12 +4,9 @@ export default function getUser() {
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
-      const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/users/${e.target.userId.value}`,
-        {
-          method: "DELETE",
-        }
-      );
+      const res = await fetch(`/api/users/${e.target.userId.value}`, {
+        method: "DELETE",
+      });
 
       res.status === 200 ? console.log(await res.json()) : console.log(res);
     } catch (error) {

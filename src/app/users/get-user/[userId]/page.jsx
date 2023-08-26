@@ -1,8 +1,6 @@
 export default async function getUser({ params }) {
   const { userId } = params;
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/users/${userId}`
-  );
+  const res = await fetch(`/api/users/${userId}`);
   const user = await res.json();
   return (
     <div style={{ padding: "6px", border: "2px solid gray" }}>

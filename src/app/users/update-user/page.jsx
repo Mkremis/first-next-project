@@ -6,16 +6,13 @@ export default async function updateUser() {
     const formData = new FormData(e.target);
     const userData = Object.fromEntries(formData.entries());
 
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/api/users/${userData.userId}`,
-      {
-        method: "PUT",
-        body: JSON.stringify(userData),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const res = await fetch(`/api/users/${userData.userId}`, {
+      method: "PUT",
+      body: JSON.stringify(userData),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
     const data = await res.json();
     console.log(data);
   };
