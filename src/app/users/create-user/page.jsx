@@ -5,19 +5,19 @@ export default async function createUser() {
     e.preventDefault();
     const formData = new FormData(e.target);
     const userData = Object.fromEntries(formData.entries());
-    console.log(userData);
-    const res = await fetch(`https://9rdz68-3001.csb.app/api/users`, {
+
+    const res = await fetch(`http://localhost:3000/api/users`, {
       method: "POST",
       body: JSON.stringify(userData),
       headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
+        "Content-Type": "application/json",
       },
     });
     const data = await res.json();
-    alert(data.message);
+    console.log(data);
   };
   return (
-    <div>
+    <div className="container">
       <h1>Crear un usuario</h1>
       <br />
       <form onSubmit={handleSubmit}>

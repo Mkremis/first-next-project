@@ -13,6 +13,12 @@ export default function UsersPage() {
         <li>
           <Link href="/users/create-user">Crear un usuario</Link>
         </li>
+        <li>
+          <Link href="/users/update-user">Actualizar un usuario</Link>
+        </li>
+        <li>
+          <Link href="/users/delete-user">Eliminar un usuario</Link>
+        </li>
       </ul>
     </div>
   );
